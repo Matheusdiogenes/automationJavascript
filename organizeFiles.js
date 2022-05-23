@@ -4,10 +4,9 @@ const path = require('path');
 fs.readdir(path.resolve('./'), (err, file) => {
 
   const fileExe = __filename.split('/')[__filename.split('/').length - 1]
-  const files = file.filter(f => f.includes('.') && f !== fileExe)
+  const files = file.filter(f => f.includes('.') && f !== fileExe && f[0] !== '.')  
 
   const currentDirectory = path.resolve('./')
-  console.log(currentDirectory);
 
   const extensions = []
   files.forEach(file => {
